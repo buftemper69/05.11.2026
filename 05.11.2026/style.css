@@ -1,0 +1,207 @@
+/* Общие настройки для сброса стилей и центрирования */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121214;
+    color: #e1e1e6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Главный контейнер всего проекта */
+.tasklist {
+    background-color: #202024;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #29292e;
+}
+
+/* Стили заголовка */
+h2 {
+    text-align: center;
+    color: #00adb5;
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+/* Блок ввода (Инпут + Кнопка XD) */
+.input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.input-container h2 {
+    width: 100%;
+}
+
+/* Поле ввода новой задачи */
+.taskinput {
+    flex: 1;
+    background-color: #121214;
+    border: 2px solid #29292e;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 16px;
+    transition: border-color 0.2s ease;
+}
+
+.taskinput:focus {
+    outline: none;
+    border-color: #00adb5;
+}
+
+/* Главная кнопка "XD" */
+.text-input {
+    background-color: #00adb5;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.text-input:hover {
+    background-color: #00c4cc;
+}
+
+.text-input:active {
+    transform: scale(0.95);
+}
+
+/* Контейнер для списка задач */
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Стили для ОДНОЙ карточки задачи (.onetask) */
+.onetask {
+    display: flex;
+    align-items: center;
+    background-color: #29292e;
+    padding: 14px 16px;
+    border-radius: 8px;
+    border: 1px solid #323238;
+    gap: 12px;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Чекбокс */
+.checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: #00adb5;
+    cursor: pointer;
+}
+
+/* Контейнер для текста внутри задачи */
+.task-text-cont {
+    flex: 1;
+    min-width: 0; /* предотвращает переполнение текстом */
+}
+
+/* Текст задачи */
+.task-text {
+    font-size: 16px;
+    color: #e1e1e6;
+    word-wrap: break-word;
+    transition: all 0.2s ease;
+}
+
+/* Инпут в режиме редактирования */
+.edit-input {
+    width: 65%;
+    background-color: #121214;
+    border: 1px solid #00adb5;
+    border-radius: 4px;
+    padding: 6px 10px;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Общие стили для КНОПОК внутри карточки задачи (edit, del, ✓, ✗) */
+.onetask button {
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Кнопка edit */
+.edit-btn {
+    background-color: #3e3e42;
+    color: #e1e1e6;
+}
+
+.edit-btn:hover {
+    background-color: #00adb5;
+    color: #fff;
+}
+
+/* Кнопка del */
+.del-btn {
+    background-color: #3e3e42;
+    color: #ff5555;
+}
+
+.del-btn:hover {
+    background-color: #ff5555;
+    color: #fff;
+}
+
+/* Кнопка сохранения изменений (✓) */
+.save-btn {
+    background-color: #04d361;
+    color: #fff;
+    margin-left: 5px;
+}
+
+.save-btn:hover {
+    background-color: #0ee66e;
+}
+
+/* Кнопка отмены изменений (✗) */
+.cancel-btn {
+    background-color: #ff5555;
+    color: #fff;
+    margin-left: 5px;
+}
+
+.cancel-btn:hover {
+    background-color: #ff6e6e;
+}
+
+/* Анимация плавного появления новой задачи */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
